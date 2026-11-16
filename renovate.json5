@@ -1,0 +1,215 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "description": "Repository-specific update groups for Vue, Vite, and .NET dependencies. Inherits shared update policies from the BC Gov preset.",
+  "extends": [
+    "github>bcgov/renovate-config#2026.10.29"
+  ],
+  "packageRules": [
+    {
+      "description": "Regenerate npm lockfiles consistently",
+      "matchManagers": [
+        "npm"
+      ],
+      "postUpdateOptions": [
+        "npmInstallTwice"
+      ]
+    },
+    {
+      "description": "Vue ecosystem",
+      "matchManagers": [
+        "npm"
+      ],
+      "matchPackageNames": [
+        "vue",
+        "vue-router",
+        "pinia",
+        "@vueuse/core",
+        "@vue/test-utils",
+        "@vue/tsconfig"
+      ],
+      "groupName": "Vue ecosystem",
+      "groupSlug": "vue-ecosystem"
+    },
+    {
+      "description": "Vite tooling",
+      "matchManagers": [
+        "npm"
+      ],
+      "matchPackageNames": [
+        "vite",
+        "@vitejs/plugin-vue",
+        "vite-plugin-vue-devtools"
+      ],
+      "groupName": "Vite tooling",
+      "groupSlug": "vite"
+    },
+    {
+      "description": "Vuetify",
+      "matchManagers": [
+        "npm"
+      ],
+      "matchPackageNames": [
+        "vuetify",
+        "vite-plugin-vuetify"
+      ],
+      "groupName": "Vuetify",
+      "groupSlug": "vuetify"
+    },
+    {
+      "description": "FullCalendar",
+      "matchManagers": [
+        "npm"
+      ],
+      "matchPackageNames": [
+        "@fullcalendar/core",
+        "@fullcalendar/vue3"
+      ],
+      "groupName": "FullCalendar",
+      "groupSlug": "fullcalendar"
+    },
+    {
+      "description": "TypeScript tooling",
+      "matchManagers": [
+        "npm"
+      ],
+      "matchPackageNames": [
+        "typescript",
+        "@typescript/native",
+        "vue-tsc"
+      ],
+      "groupName": "TypeScript tooling",
+      "groupSlug": "typescript"
+    },
+    {
+      "description": "ESLint and Oxlint tooling",
+      "matchManagers": [
+        "npm"
+      ],
+      "matchPackageNames": [
+        "eslint",
+        "eslint-config-prettier",
+        "eslint-plugin-vue",
+        "eslint-plugin-oxlint",
+        "eslint-plugin-playwright",
+        "@vue/eslint-config-typescript",
+        "@vitest/eslint-plugin",
+        "oxlint"
+      ],
+      "groupName": "ESLint and Oxlint tooling",
+      "groupSlug": "lint-tooling"
+    },
+    {
+      "description": "Vitest tooling",
+      "matchManagers": [
+        "npm"
+      ],
+      "matchPackageNames": [
+        "vitest",
+        "happy-dom"
+      ],
+      "groupName": "Vitest tooling",
+      "groupSlug": "vitest"
+    },
+    {
+      "description": "Luxon",
+      "matchManagers": [
+        "npm"
+      ],
+      "matchPackageNames": [
+        "luxon",
+        "@types/luxon",
+        "@date-io/luxon"
+      ],
+      "groupName": "Luxon",
+      "groupSlug": "luxon"
+    },
+    {
+      "description": "Node.js types and TypeScript configuration",
+      "matchManagers": [
+        "npm"
+      ],
+      "matchPackageNames": [
+        "@types/node",
+        "@tsconfig/node24"
+      ],
+      "groupName": "Node.js types and TypeScript configuration",
+      "groupSlug": "node-types"
+    },
+    {
+      "matchManagers": [
+        "nuget"
+      ],
+      "matchDatasources": [
+        "nuget"
+      ],
+      "matchPackageNames": [
+        "Microsoft.EntityFrameworkCore",
+        "Microsoft.EntityFrameworkCore.*"
+      ],
+      "matchUpdateTypes": [
+        "minor",
+        "patch"
+      ],
+      "groupName": "Entity Framework Core",
+      "groupSlug": "ef-core"
+    },
+    {
+      "matchManagers": [
+        "nuget"
+      ],
+      "matchDatasources": [
+        "nuget"
+      ],
+      "matchPackageNames": [
+        "Microsoft.AspNetCore.Authentication.JwtBearer",
+        "Microsoft.AspNetCore.Authentication.OpenIdConnect",
+        "Microsoft.AspNetCore.Authorization",
+        "Microsoft.AspNetCore.OpenApi",
+        "Microsoft.AspNetCore.TestHost"
+      ],
+      "matchUpdateTypes": [
+        "minor",
+        "patch"
+      ],
+      "groupName": "ASP.NET Core",
+      "groupSlug": "aspnet-core"
+    },
+    {
+      "matchManagers": [
+        "nuget"
+      ],
+      "matchDatasources": [
+        "nuget"
+      ],
+      "matchPackageNames": [
+        "Microsoft.Extensions.Logging",
+        "Microsoft.Extensions.Logging.Abstractions",
+        "Microsoft.Extensions.Options.ConfigurationExtensions"
+      ],
+      "matchUpdateTypes": [
+        "minor",
+        "patch"
+      ],
+      "groupName": "Microsoft.Extensions",
+      "groupSlug": "microsoft-extensions"
+    },
+    {
+      "matchManagers": [
+        "nuget"
+      ],
+      "matchDatasources": [
+        "nuget"
+      ],
+      "matchPackageNames": [
+        "Hangfire.Core",
+        "Hangfire.AspNetCore"
+      ],
+      "matchUpdateTypes": [
+        "minor",
+        "patch"
+      ],
+      "groupName": "Hangfire core",
+      "groupSlug": "hangfire-core"
+    }
+  ]
+}
